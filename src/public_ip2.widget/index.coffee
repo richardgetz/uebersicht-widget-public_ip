@@ -38,5 +38,9 @@ render: -> """
 
 update: (output, domEl) ->
   result = output.split " "
-  $(domEl).find('.ip_address').html(result[0].concat(" <img src='", result[1], "' width='26' />"))
+  if (result.length == 1)
+    $(domEl).find('.ip_address').html(result[0])
+  else
+    $(domEl).find('.ip_address').html(result[0].concat(" <img src='", result[1], "' width='26' />"))
+
 
